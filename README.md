@@ -1,5 +1,7 @@
 # Engage
 
+[![Build Status](https://travis-ci.org/ograycode/engage.svg?branch=master)](https://travis-ci.org/ograycode/engage)
+
 ## About
 
 Engage is a platform for running A/B tests with emails. The idea behind it is simple:
