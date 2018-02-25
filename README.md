@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ograycode/engage.svg?branch=master)](https://travis-ci.org/ograycode/engage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/39d4a37116054c786c39/maintainability)](https://codeclimate.com/github/ograycode/engage/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/39d4a37116054c786c39/test_coverage)](https://codeclimate.com/github/ograycode/engage/test_coverage)
 
 ## About
 
@@ -35,7 +36,7 @@ An example api call from your system to engage would look something like:
   "data": {
     "message": "hello world"
   },
-  "email_group": "123"
+  "email_group": "123",
   "provider": "456"
 }
 ```
