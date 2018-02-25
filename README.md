@@ -1,6 +1,7 @@
 # Engage
 
 [![Build Status](https://travis-ci.org/ograycode/engage.svg?branch=master)](https://travis-ci.org/ograycode/engage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/39d4a37116054c786c39/maintainability)](https://codeclimate.com/github/ograycode/engage/maintainability)
 
 ## About
 
