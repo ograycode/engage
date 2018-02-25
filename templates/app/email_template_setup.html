@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+
+{% block appbody %}
+<div class="row">
+  <div class="col">
+    <form method="POST">
+      {{csrf_input}}
+      {{ form.non_field_errors() }}
+      {{ form.group.as_hidden() }}
+      {% include 'app/email_template_form_partial.html' %}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+  {% include 'app/email_template_form_js.html' %}
+{% endblock %}

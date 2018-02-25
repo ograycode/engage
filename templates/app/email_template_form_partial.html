@@ -1,0 +1,36 @@
+<div class="form-group">
+  {{ form.name.label_tag() }}
+  {{ form.name }}
+  {{ form.name.errors }}
+</div>
+<div class="form-group">
+  {{ form.subject.label_tag() }}
+  {{ form.subject }}
+  {{ form.subject.errors }}
+</div>
+<div class="form-group">
+  {{ form.content_type.label_tag() }}
+  {{ form.content_type }}
+  {{ form.content_type.errors }}
+</div>
+<div class="form-group">
+  {{ form.preview_data.label_tag() }}
+  {{ form.preview_data }}
+</div>
+<div class="form-group">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      {{ form.content.label_tag() }}
+      {{ form.content }}
+      {{ form.content.errors }}
+    </div>
+    <div class="form-group col-md-6">
+      <label>Preview</label>
+      <p>
+        <b>Subject:</b>
+        <span id="subject-content-preview"></span>
+      </p>
+      <iframe id="template-content-preview" class="form-control"></iframe>
+    </div>
+  </div>
+</div>

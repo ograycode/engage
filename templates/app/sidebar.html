@@ -1,0 +1,16 @@
+
+<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+  <ul class="nav nav-pills flex-column">
+    {% for href, name in [
+        ('/app/', 'Home'), 
+      ] %}
+      <li class="nav-item">
+      <a 
+        class="nav-link {% if sidebar_active == href %} active {% endif %}"
+        href="{{href}}">
+        {{name}}
+      </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

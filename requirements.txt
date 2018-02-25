@@ -1,0 +1,11 @@
+Django>=1.8,<2.0
+psycopg2
+sendgrid==5.3.0
+djangorestframework
+markdown       # Markdown support for the browsable API.
+django-filter  # Filtering support
+model_mommy
+pybars3
+Jinja2
+django-extensions
+Werkzeug

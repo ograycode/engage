@@ -1,0 +1,38 @@
+{% extends 'app/base.html' %}
+
+{% block appbody %}
+<div class="row">
+  <div class="col">
+    <a
+       href="{{url('app:email-group-setup')}}"
+       class="btn btn-primary float-md-right">
+      New Email Group
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h2>Email Groups</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+        </tr>
+      </tbody>
+        {% for group in groups %}
+        <tr>
+          <td>
+            <a
+              href="{{url('app:email-group-detail', args=[group.id.hex])}}">
+              {{group.short_id}}
+            </a>
+          </td>
+          <td>{{group.name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

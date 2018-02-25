@@ -1,0 +1,90 @@
+{% extends 'app/base.html' %}
+
+{% block appbody %}
+<div class="row">
+  <div class="col">
+    <h2>{{group.name}}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <b>Default Template:</b> {{group.default_template__name}}
+  </div>
+</div>
+<!-- begin templates -->
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h3>Templates</h3>
+      </div>
+      <div class="col">
+        <a href="{{template_setup_link}}" class="float-right btn btn-primary">New Template</a>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Updated On</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for template in templates %}
+          <tr>
+            <td>
+              <a 
+                href="{{url('app:template-edit', args=[template.id.hex])}}">
+                {{template.id.hex[0:5]}}
+              </a>
+            </td>
+            <td>{{template.name}}</td>
+            <td>{{template.updated_at}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- end templates -->
+<!-- begin experiments -->
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h3>Experiments</h3>
+      </div>
+      <div class="col">
+        <a 
+           href="{{experiment_setup_link}}"
+           class="float-right btn btn-primary">
+          New Experiment
+        </a>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Choice A Name</th>
+          <th>Choice B Name</th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for experiment in experiments %}
+          <tr>
+            <td>{{experiment.id.hex[0:5]}}</td>
+            <td>{{experiment.name}}</td>
+            <td>{{experiment.choice_a__name}}</td>
+            <td>{{experiment.choice_b__name}}</td>
+            <td>{{experiment.is_active}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

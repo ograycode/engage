@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% block appbody %}
+<div class="row">
+  <div class="col">
+    <form method="POST">
+      {{ csrf_input }}
+      <div class="form-group">
+        {{ form.user_group.label_tag() }}
+        {{ form.user_group }}
+      </div>
+      <div class="form-group">
+        {{ form.group_name.label_tag() }}
+        {{ form.group_name }}
+      </div>
+      <hr/>
+      {% include 'app/email_template_form_partial.html' %}
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+<script src="{{static('app/template_content_renderer.js')}}"></script>
+{% endblock %}

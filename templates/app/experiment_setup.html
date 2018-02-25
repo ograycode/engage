@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% block appbody %}
+  <div class="row">
+    <div class="col">
+      <form class="form" method="POST">
+        {{csrf_input}}
+        {% for field in form %}
+          {% if field.field.__class__.__name__ == 'BooleanField' %}
+            <div class="form-check">
+              <label class="form-check-label">
+                {{ field }}
+                {{ field.label }}
+              </label>
+            </div>
+          {% else %}
+            <div class="form-group">
+              {{ field.label }}
+              {{ field }}
+            </div>
+          {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
