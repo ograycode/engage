@@ -9,3 +9,4 @@ pybars3
 Jinja2
 django-extensions
 Werkzeug
+coverage
